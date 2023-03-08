@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
-  query?: string;
+  query!: string;
+
+  constructor(private router: Router) {}
+  
+  searchMovies() {
+    this.router.navigate(['/search'], { queryParams: { query: this.query }});
+  }
 
 }

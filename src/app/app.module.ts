@@ -13,12 +13,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button'
 import { MatInputModule } from '@angular/material/input';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,

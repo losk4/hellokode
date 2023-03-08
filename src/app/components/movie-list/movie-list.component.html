@@ -1,6 +1,6 @@
 <div class="movie-list-wrapper">
     <mat-action-list *ngIf="movies" class="movie-list">
         <button mat-list-item *ngFor="let movie of movies">{{ movie.title }}</button>
-        <button mat-list-item class="load-more-button">Load more</button>
+        <button (click)="loadMore()"mat-list-item class="load-more-button">Load more</button>
     </mat-action-list>    
 </div>

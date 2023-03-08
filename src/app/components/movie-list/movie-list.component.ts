@@ -10,6 +10,8 @@ import { MovieService } from 'src/app/services/movie.service';
 export class MovieListComponent implements OnInit {
 
   movies!: any[];
+  query!: string;
+  pages!: number;
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {}
 
@@ -17,7 +19,16 @@ export class MovieListComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((params: any) => {
       this.movieService.getMovies(params.query).subscribe((response: any) => {
         this.movies = response;
+        this.query = params.query;
       });
+    });
+
+    this.pages = 1;
+  }
+
+  loadMore() {
+    this.movieService.getMovies(this.query, ++this.pages).subscribe((response: any) => {
+      this.movies = this.movies.concat(response);
     });
   }
 

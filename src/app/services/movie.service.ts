@@ -11,11 +11,12 @@ export class MovieService {
 
   private readonly API_KEY = "22ff991962592b38a6f4c9f05d748c3e";
 
-  getMovies(query: string): Observable<any> {
+  getMovies(query: string, page: number = 1): Observable<any> {
     const params = new HttpParams()
       .set('api_key', this.API_KEY)
       .set('language', 'es-ES')
-      .set('query', query);
+      .set('query', query)
+      .set('page', page);
 
     return this.http.get(`https://api.themoviedb.org/3/search/movie`, { params })
       .pipe(map((data: any) => {

@@ -1,1 +1,16 @@
-<p>movie-details works!</p>
+<div class="movie-card-wrapper" *ngIf="movie">
+    <div class="movie-card">
+        <div class="header">
+            <img class="poster" [src]="movie.poster_path" />
+            <div class="info">
+                <h1>{{ movie.title }}</h1>
+                <h4>{{ movie.release_date.split('-')[0] }}, {{ movie.original_language.toUpperCase() }}</h4>
+            </div>
+
+        </div>
+        <p class="description"><strong>Sinopsis: </strong>{{ movie.overview }}</p>
+    </div>
+    <div class="backdrop" [style.background-image]="'url(' + movie.backdrop_path + ')'">
+    
+    </div>
+</div>

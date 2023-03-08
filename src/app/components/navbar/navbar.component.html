@@ -1,5 +1,9 @@
 <div class="nav-bar-wrapper">
+  
   <div class="search-bar">
+    <button class="home-button" [routerLink]="'/home'">
+      <mat-icon>home</mat-icon>
+    </button>
     <mat-form-field class="search-form" subscriptSizing="dynamic">
       <mat-label>Search</mat-label>
       <input matInput type="text" [(ngModel)]="query" (keyup.enter)="searchMovies()">
@@ -7,7 +11,7 @@
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
-    <button class="search-button">
+    <button class="search-button" (click)="searchMovies()">
       <mat-icon>search</mat-icon>
     </button>
   </div>

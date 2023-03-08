@@ -31,4 +31,19 @@ export class MovieService {
       }));
   }
 
+  getMovieById(id: number) {
+    const params = new HttpParams()
+      .set('api_key', this.API_KEY)
+      .set('language', 'es-ES');
+      
+      return this.http.get(`https://api.themoviedb.org/3/movie/${id}`, { params })
+        .pipe(map((data:any) => {
+          data['poster_path'] = data['poster_path'] ? 
+          `https://image.tmdb.org/t/p/w300${data['poster_path']}` : `https://place-hold.it/300x500`;
+          data['backdrop_path'] = data['backdrop_path'] ? 
+          `https://image.tmdb.org/t/p/original${data['backdrop_path']}` : `https://place-hold.it/900x600`
+          return data;
+        }));
+  }
+
 }

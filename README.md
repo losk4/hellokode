@@ -13,5 +13,6 @@ https://hellokode-6597c.web.app/home
 git clone https://github.com/abidakram01/angular-movie-app.git
 cd hellokode
 npm install
-ng serve -o (se abrirá el navegador en http://localhost:4200/
+ng serve -o
 ```
+Se abrirá una ventana en http://localhost:4200

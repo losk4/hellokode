@@ -10,12 +10,13 @@
     .movie-list {
         text-align: center;
         width: 100%;
-        height: 720px;
+        max-height: 720px;
         background-color: antiquewhite;
         padding: 0;
         overflow: auto;
 
         .load-more-button {
+            text-align: center;
             margin-top: 8px;
             background-color: rgb(238, 230, 220);
         }

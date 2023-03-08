@@ -1,7 +1,7 @@
 <div class="movie-list-wrapper">
     <mat-action-list *ngIf="movies.length != 0" class="movie-list">
         <button mat-list-item *ngFor="let movie of movies" [routerLink]="['/movie', movie.id]">{{ movie.title }}</button>
-        <button *ngIf="morePages" (click)="loadMore()"mat-list-item class="load-more-button">Load more</button>
+        <button *ngIf="morePages" (click)="loadMore()"mat-list-item class="load-more-button">Cargar más</button>
     </mat-action-list>    
     <p *ngIf="movies.length == 0" style="font-size: 16px;">Sin resultados</p>
 </div>

@@ -1,0 +1,28 @@
+.nav-bar-wrapper {
+    height: 80px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .search-bar {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 720px;
+
+        .search-form {
+            flex-grow: 1;
+            height: 60px;
+        }
+
+        .search-button {
+            width: 60px;
+            height: 60px;
+            border-style: none;
+            border-bottom: solid;
+            border-width: 1px;
+        }
+    }
+}

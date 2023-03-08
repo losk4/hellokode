@@ -12,6 +12,7 @@ export class MovieListComponent implements OnInit {
   movies!: any[];
   query!: string;
   pages!: number;
+  morePages!: boolean;
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {}
 
@@ -20,6 +21,7 @@ export class MovieListComponent implements OnInit {
       this.movieService.getMovies(params.query).subscribe((response: any) => {
         this.movies = response;
         this.query = params.query;
+        this.morePages = response.length == 20 ? true : false;
       });
     });
 
@@ -29,6 +31,8 @@ export class MovieListComponent implements OnInit {
   loadMore() {
     this.movieService.getMovies(this.query, ++this.pages).subscribe((response: any) => {
       this.movies = this.movies.concat(response);
+      if(response.length < 20) 
+        this.morePages = false;
     });
   }
 

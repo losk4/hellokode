@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.movie-card-wrapper {
+    position: relative;
+    max-width: 720px;
+    width: auto;
+    height: auto;
+    margin: 40px auto;
+    box-shadow: 0px 0px 20px -10px rgba(0,0,0, 0.5);
+    border-radius: 10px;
+
+    .movie-card {
+        position: relative;
+        display: inline-grid;
+        width: 100%;
+        height: auto;
+        padding: 32px;
+        background: linear-gradient(to top, #e5e6e6 20%, #e5e6e691 100%);
+        background-blend-mode: multiply;
+        z-index: 2;
+        border-radius: 10px;
+
+        .poster {
+            height: 240px;
+        }
+
+        .header {
+            display: flex;
+            margin-bottom: 14px;
+
+            .poster {
+                height: 220px;
+                box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+            }
+
+            .info {
+                margin-left: 14px;
+
+                h1 {
+                    font-size: 32px;
+                    font-weight: 800;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+        
+        .description {
+            text-align: justify;
+        }
+    }
+
+    .backdrop {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        height: 100%;
+        right: 0;
+        background-size: cover;
+        border-radius: 11px;
+        width: 100%;
+    }
+}

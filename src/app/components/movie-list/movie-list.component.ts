@@ -17,7 +17,6 @@ export class MovieListComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((params: any) => {
       this.movieService.getMovies(params.query).subscribe((response: any) => {
         this.movies = response;
-        console.log(this.movies);
       });
     });
   }
